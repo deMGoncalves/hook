@@ -6,7 +6,7 @@ export default (advice) =>
 
     f.assign(descriptor, {
       value () {
-        return advice(joinPoint.apply(this, arguments))
+        return advice.apply(this, joinPoint.apply(this, arguments))
       }
     })
   }
